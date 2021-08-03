@@ -15,12 +15,18 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public Transform wallRunCheck;
+    public float wallRunDistance = 0.6f;
+    public LayerMask wallRunMask;
 
     Vector3 velocity;
     bool isGrounded;
-
+    bool isWallRunning;
 
     private float jumpForce;
+
+    public float jumpGracePeriod = 0.2f;
+    private float lastTimeOnGround = 0f;
 
     private void Start()
     {
@@ -31,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
+        isWallRunning = Physics.CheckSphere(wallRunCheck.position, wallRunDistance, wallRunMask);
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -43,12 +49,22 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * movementSpeed * Time.deltaTime);
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (isGrounded)
+        {
+            lastTimeOnGround = Time.time;
+        }
+        if (Input.GetButtonDown("Jump") && (lastTimeOnGround >= Time.time - jumpGracePeriod))
         {
             velocity.y = jumpForce;
         }
-        velocity.y += gravity * Time.deltaTime;
-
+        if (isWallRunning && (x != 0 || z != 0))
+        {
+            velocity.y += (gravity / 2f) * Time.deltaTime;
+        }
+        else
+        {
+            velocity.y += gravity * Time.deltaTime;
+        }
         controller.Move(velocity * Time.deltaTime);
     }
 }
