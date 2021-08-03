@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
 
 
-    public float jumpForce;
+    private float jumpForce;
 
     private void Start()
     {
