@@ -29,10 +29,12 @@ public class Dash : MonoBehaviour
     private IEnumerator dashCooldown()
     {
         yield return new WaitForSeconds(cooldownTime);
-        if(remainingDashes == maximumDashes)
+        if(remainingDashes >= maximumDashes)
         {
-            yield return null;
+            remainingDashes = maximumDashes;
         }
-        remainingDashes++;
+        else{
+            remainingDashes++;
+        }
     }
 }
