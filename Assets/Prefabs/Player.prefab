@@ -268,7 +268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357686275274035937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.46, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1357686274647563430}
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1357686275274035936}
-  movementSpeed: 12
+  movementSpeed: 9
   gravity: -24.525
   jumpHeight: 1.5
   groundCheck: {fileID: 1357686274517403029}
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1357686275274035936}
-  dashForce: 30
+  dashForce: 50
   maximumDashes: 2
   remainingDashes: 2
   dashesReseted: 0
