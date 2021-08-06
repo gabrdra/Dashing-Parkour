@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec128cf3a5fd87d42858204785e09d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1000
+  mouseSensitivity: 500
   playerTransform: {fileID: 1357686275274035939}
 --- !u!1 &1357686275274035937
 GameObject:
@@ -336,9 +336,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1357686275274035936}
-  dashForce: 0.03
+  dashForce: 30
   maximumDashes: 2
   remainingDashes: 2
+  dashesReseted: 0
   dashDuration: 0.25
   cooldownTime: 2.5
 --- !u!114 &4765197359988796401

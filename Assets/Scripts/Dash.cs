@@ -16,7 +16,7 @@ public class Dash : MonoBehaviour
     {
         if (dashFinishTime > Time.time)
         {
-            controller.Move(Camera.main.transform.forward * dashForce);
+            controller.Move(Camera.main.transform.forward * dashForce*Time.deltaTime);
             //dashing = false;
         }
         else if (Input.GetKeyDown("mouse 0") && remainingDashes > 0)
