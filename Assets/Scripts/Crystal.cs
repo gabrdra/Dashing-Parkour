@@ -10,7 +10,10 @@ public class Crystal : MonoBehaviour
         if (other.gameObject.name == player.name)
         {
             Dash dashScript = other.gameObject.GetComponent<Dash>();
+            PlayerStats playerStatsScript = other.gameObject.GetComponent<PlayerStats>();
+            playerStatsScript.addScore(100);
             dashScript.remainingDashes = dashScript.maximumDashes;
+            dashScript.dashesReseted = true;
             Destroy(gameObject);
         }
     }
