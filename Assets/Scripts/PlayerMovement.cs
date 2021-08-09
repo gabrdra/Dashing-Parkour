@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (isWallRunning && (x != 0 || z != 0))
         {
-            velocity.y += (gravity / 2f) * Time.deltaTime;
+            velocity.y += (gravity / 3f) * Time.deltaTime;
         }
         else
         {
