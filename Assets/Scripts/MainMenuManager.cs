@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
+    public GameObject howToPlayPanel;
+    private bool howToPlayPanelStatus = false;
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -12,7 +14,11 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("LevelSelect");
     }
-
+    public void HowToPlayButton()
+    {
+        howToPlayPanelStatus = !(howToPlayPanelStatus);
+        howToPlayPanel.SetActive(howToPlayPanelStatus);
+    }
     public void ExitButton()
     {
         Application.Quit();
