@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class MainMenuManager : MonoBehaviour
+
+public class LevelSelectManager : MonoBehaviour
 {
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
     }
-    public void StartButton()
+    public void BackButton()
     {
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("MainMenu");
     }
-
-    public void ExitButton()
+    public void LevelSelectButton(int level)
     {
-        Application.Quit();
+        SceneManager.LoadScene("Level" + level);
     }
 }
+
