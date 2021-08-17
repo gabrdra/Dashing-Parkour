@@ -5,7 +5,7 @@ using TMPro;
 public class PlayerStats : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    int score = 0;
+    public int score = 0;
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI dashesRemainingText;
     Dash dashScript;

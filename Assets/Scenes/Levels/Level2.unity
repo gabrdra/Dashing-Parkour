@@ -2592,6 +2592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc506c419a1da704f93c2dd283c7ee41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreScreen: {fileID: 1246911595}
 --- !u!65 &543674373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7787,6 +7788,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1246911595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7633661500763564818, guid: 4d3e76fb3c6eea94f9ce0f46b8231fac, type: 3}
+  m_PrefabInstance: {fileID: 1434938129}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1346216547
 Mesh:
   m_ObjectHideFlags: 0
