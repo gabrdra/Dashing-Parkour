@@ -45,22 +45,6 @@ public class ScoreScreen : MonoBehaviour
         {
             highScoreText.text += (i+1) + " Score: " + currentHighScores[i] + "\n";
         }
-        if (level == "Level1")
-        {
-            highScores.highScores1 = currentHighScores;
-        }
-        else if (level == "Level2")
-        {
-            highScores.highScores2 = currentHighScores;
-        }
-        else if (level == "Level3")
-        {
-            highScores.highScores3 = currentHighScores;
-        }
-        else if (level == "Level4")
-        {
-            highScores.highScores4 = currentHighScores;
-        }
     }
     public void LevelSelectButton()
     {
