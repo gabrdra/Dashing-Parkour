@@ -59,7 +59,12 @@ public class ScoreScreen : MonoBehaviour
         {
             highScoreText.text += (i+1) + " Score: " + currentHighScores[i] + "\n";
         }
-        SaveStructure saveStructure = new SaveStructure(currentLevel, highScores);
+        int highestLevel = save.highestLevelCompleted;
+        if(currentLevel > save.highestLevelCompleted)
+        {
+            highestLevel = currentLevel;
+        }
+        SaveStructure saveStructure = new SaveStructure(highestLevel, highScores);
         SaveSystem.SaveGame(saveStructure);
     }
     public void LevelSelectButton()
