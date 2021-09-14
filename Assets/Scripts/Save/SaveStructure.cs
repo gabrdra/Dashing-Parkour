@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveStructure
 {
-    public int highestLevelCompleted;
+    public int highestLevelCompleted = 0;
     public int[] highScores1;
     public int[] highScores2;
     public int[] highScores3;

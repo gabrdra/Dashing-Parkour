@@ -59,10 +59,14 @@ public class ScoreScreen : MonoBehaviour
         {
             highScoreText.text += (i+1) + " Score: " + currentHighScores[i] + "\n";
         }
-        int highestLevel = save.highestLevelCompleted;
-        if(currentLevel > save.highestLevelCompleted)
+        int highestLevel = currentLevel;
+        if (save != null)
         {
-            highestLevel = currentLevel;
+            highestLevel = save.highestLevelCompleted;
+            if (currentLevel > save.highestLevelCompleted)
+            {
+                highestLevel = currentLevel;
+            }
         }
         SaveStructure saveStructure = new SaveStructure(highestLevel, highScores);
         SaveSystem.SaveGame(saveStructure);
