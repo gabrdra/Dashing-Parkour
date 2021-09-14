@@ -27,7 +27,7 @@ public static class SaveSystem
         }
         else
         {
-            Debug.Log("Tried to load from a non existent file.");
+            //Debug.Log("Tried to load from a non existent file.");
             return null;
         }
     }
